@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sunil Kumar — Portfolio</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- AOS (scroll animations) -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+  <!-- main CSS -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- Meta for nice share -->
+  <meta name="description" content="Sunil Kumar — MCA Student • Web Developer • Video Editor. Portfolio." />
+</head>
+<body>
+
+    
+  <!-- PRELOADER -->
+  <div class="preloader" id="preloader">
+    <div class="loader-inner">
+      <div class="loader-dot"></div>
+      <div class="loader-dot"></div>
+      <div class="loader-dot"></div>
+    </div>
+    <div class="loader-text">Sunil is Building Awesome Things...</div>
+  </div>
+
+  <!-- Fixed left nav -->
+  <header class="left-nav" aria-hidden="false">
+    <nav class="nav flex-column text-center">
+      <a href="#hero" title="Home"><i class="bi bi-house-door-fill"></i></a>
+      <a href="#about" title="About"><i class="bi bi-person-fill"></i></a>
+      <a href="#skills" title="Skills"><i class="bi bi-lightning-fill"></i></a>
+      <a href="#projects" title="Projects"><i class="bi bi-window-stack"></i></a>
+      <a href="#links" title="Links"><i class="bi bi-link-45deg"></i></a>
+      <a href="#contact" title="Contact"><i class="bi bi-envelope-fill"></i></a>
+      <button id="modeToggle" class="mode-btn" title="Toggle theme"><i class="bi bi-moon-fill"></i></button>
+    </nav>
+  </header>
+
+  <main class="main" id="main">
+
+    <!-- HERO -->
+    <section id="hero" class="hero d-flex align-items-center justify-content-center">
+      <div class="container text-center" data-aos="zoom-out">
+        <h1 class="display-4 fw-bold">Sunil Kumar</h1>
+        <p class="lead mb-4">I'm <span class="typed-text"></span></p>
+        <div class="d-flex justify-content-center gap-3">
+          <a class="btn btn-cta" href="#projects">View Projects</a>
+          <a class="btn btn-outline-cta" href="#contact">Contact Me</a>
+        </div>
+
+        <div class="social mt-4">
+          <a href="https://github.com/realsunil" target="_blank" aria-label="GitHub"><i class="bi bi-github"></i></a>
+          <a href="https://instagram.com/realsunil__" target="_blank" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+          <a href="https://www.youtube.com/@sunilgaming_op" target="_blank" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+          <a href="mailto:hustlewithsunil@gmail.com" aria-label="Email"><i class="bi bi-envelope"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section container" data-aos="fade-up">
+      <div class="row align-items-center">
+        <div class="col-lg-8">
+          <h2>About Me</h2>
+          <!-- Long about text as requested -->
+         <p class="about-long">
+Hi, I'm <strong>Sunil Kumar</strong> — MCA student at <strong>JSS University, Noida</strong> and a passionate tech learner who enjoys building modern web experiences and creating digital content.  
+
+I work with <strong>HTML, CSS, JavaScript</strong> and love making clean UI, fast websites, and smooth user experiences. Alongside coding, I also do <strong>video editing</strong> and create tech & gaming content.
+
+I believe in learning-by-building — whether it's a website, a Discord bot, or a creative edit. Currently, I'm focusing on improving my full-stack skills and working on real-world projects.
+
+Always open for internships, collaborations, and freelance work — let's build something awesome together!
+</p>
+
+
+          <div class="mt-3">
+            <a class="btn btn-outline-cta me-2" 
+   href="https://drive.google.com/file/d/14wNp4cJaXJxn9gKtlX-eWIcdLM0uo9W2/view?usp=sharing" 
+   target="_blank">
+   Download Resume
+</a>
+
+<a class="btn btn-cta" href="#contact">
+   Hire Me
+</a>
+
+          </div>
+        </div>
+
+        <div class="col-lg-4 text-center">
+          <!-- Optional avatar or illustrative card -->
+          <div class="glass-card p-3" data-tilt data-tilt-max="8">
+            <div class="role">Developer • Editor • Creator</div>
+            <div class="mt-3">
+              <p><i class="bi bi-geo-alt-fill"></i>India</p>
+              <p><i class="bi bi-envelope-fill"></i> hustlewithsunil@gmail.com</p>
+            </div>
+            <div class="mt-2">
+              <a class="btn btn-sm btn-outline-cta" href="#links">All Links</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+     <!-- ✅ Education Section -->
+  <section id="education" class="container section">
+    <div class="container section-title text-center" data-aos="fade-up"><h2>Education</h2></div>
+
+    <div class="edu-item">
+      <h3>MCA — JSS University, Noida</h3>
+      <p><strong>2025 – Expected 2027</strong></p>
+      <p>Pursuing Master of Computer Applications</p>
+    </div>
+
+    <div class="edu-item">
+      <h3>Bachelor of science - Raja Mahendra Pratap Singh University </h3>
+      <p><strong>2021-2024</strong></p>
+    </div>
+
+  </section>
+
+    <!-- SKILLS -->
+     <div class="container section-title text-center" data-aos="fade-up"><h2>Skills</h2></div>
+      <div class="container">
+       
+        <div class="row g-4">
+          <div class="col-md-6">
+            <div class="glass-card p-4">
+              <h5>Frontend</h5>
+              <p>HTML, CSS, JavaScript, Bootstrap, React (basics)</p>
+              <div class="skill-item">
+                <label>HTML</label>
+                <div class="progress"><div class="progress-bar" style="width:100%"></div></div>
+              </div>
+              <div class="skill-item">
+                <label>JavaScript</label>
+                <div class="progress"><div class="progress-bar" style="width:95%"></div></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="glass-card p-4">
+              <h5>Backend & Tools</h5>
+              <p>PHP, MySQL, Git, WordPress, REST APIs</p>
+              <div class="skill-item">
+                <label>Python</label>
+                <div class="progress"><div class="progress-bar" style="width:80%"></div></div>
+              </div>
+              <div class="skill-item">
+                <label>Node.Js</label>
+                <div class="progress"><div class="progress-bar" style="width:90%"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+ <!-- PROJECTS -->
+<section id="projects" class="section">
+
+  <div class="container section-title text-center" data-aos="fade-up">
+    <h2>Projects</h2>
+  </div>
+
+  <!-- FILTER (simple) -->
+  <div class="d-flex justify-content-center mb-3">
+    <button class="btn btn-sm btn-outline-secondary me-2" data-filter="all">All</button>
+    <button class="btn btn-sm btn-outline-secondary me-2" data-filter="web">Web</button>
+    <button class="btn btn-sm btn-outline-secondary me-2" data-filter="video">Video</button>
+  </div>
+
+  <div class="row g-4" id="projectGrid">
+    <!-- Example project card (copy & duplicate for more) -->
+  <div class="col-md-4 project-item" data-type="web">
+  <div class="project-card glass-card p-3" data-tilt data-tilt-max="6" data-aos="zoom-in">
+    <img src="assets/img/project1.jpg" alt="Project 1 screenshot" class="img-fluid mb-2">
+    <h5>Portfolio Website</h5>
+    <p class="small text-muted">Modern responsive portfolio built with Bootstrap & custom animations.</p>
+    <div class="d-flex gap-2 mt-2">
+      <a class="btn btn-sm btn-outline-cta" href="https://sunilgaming.pages.dev/" target="_blank">Preview</a>
+      <a class="btn btn-sm btn-outline-cta" 
+         href="https://github.com/realsunil/portfolio-template"
+         target="_blank">
+         GitHub
+      </a>
+    </div>
+  </div>
+</div>
+
+  <div class="col-md-4 project-item" data-type="web">
+  <div class="project-card glass-card p-3" data-tilt data-tilt-max="6" data-aos="zoom-in">
+    <img src="assets/img/project2.png" alt="Project 1 screenshot" class="img-fluid mb-2">
+    <h5>Aurora Discord Bot</h5>
+    <p class="small text-muted">A multipurpose discod bot wit all commands.</p>
+    <div class="d-flex gap-2 mt-2">
+      <a class="btn btn-sm btn-outline-cta" href="https://discord.gg/ExFEAbtjgf" target="_blank">Preview</a>
+      
+      <!-- GitHub Button Added -->
+      <a class="btn btn-sm btn-outline-cta" href="https://github.com/realsunil/Auroraclub" target="_blank">
+        <i class="bi bi-github"></i> GitHub
+      </a>
+    </div>
+  </div>
+</div>
+
+
+<div class="col-md-4 project-item" data-type="web">
+  <div class="project-card glass-card p-3" data-tilt>
+    <img src="assets/img/project3.png" alt="Project 3 screenshot" class="img-fluid mb-2">
+    <h5>Multitube YouTube Tool</h5>
+    <p class="small text-muted">A tool for playing YouTube videos in multiple windows at the same time.</p>
+
+    <div class="d-flex gap-2 mt-2">
+      <!-- Live Link -->
+      <a class="btn btn-sm btn-outline-cta" href="https://realsunil.github.io/MultiTube/" target="_blank">
+        Live
+      </a>
+
+      <!-- GitHub Link -->
+      <a class="btn btn-sm btn-outline-cta" href="https://github.com/realsunil/MultiTube" target="_blank">
+        <i class="bi bi-github"></i> GitHub
+      </a>
+
+    </div>
+  </div>
+</div>
+
+
+</section>
+
+    <!-- LINKS (multiple links area) -->
+    <section id="links" class="section container" data-aos="fade-up">
+      <h2 class="text-center mb-4">All My Links</h2>
+      <div class="d-flex flex-wrap justify-content-center gap-3">
+        <a class="link-chip" href="https://github.com/realsunil" target="_blank"><i class="bi bi-github"></i> GitHub</a>
+        <a class="link-chip" href="https://linkedin.com/in/sunilkofficial" target="_blank"><i class="bi bi-linkedin"></i> LinkedIn</a>
+        <a class="link-chip" href="https://instagram.com/realsunil__" target="_blank"><i class="bi bi-instagram"></i> Instagram</a>
+        <a class="link-chip" href="https://www.youtube.com/@sunilgaming_op" target="_blank"><i class="bi bi-youtube"></i> YouTube</a>
+        <a class="link-chip" href="https://sunilgaming.gumroad.com/" target="_blank"><i class="bi bi-cart4"></i> Gumroad</a>
+        <a class="link-chip" href="https://forms.gle/3vLhmjfWPoK7kV2R6" target="_blank"><i class="bi bi-chat-dots"></i> Contact Form</a>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+<section id="contact" class="contact section">
+  <div class="container section-title text-center" data-aos="fade-up">
+  <h2>Contact</h2>
+  <p>Let's build something amazing together — feel free to reach out!</p>
+</div>
+
+
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+    <div class="row gy-4">
+
+      <div class="col-lg-5 d-flex flex-column justify-content-center">
+        <div class="info-item d-flex align-items-start mb-4">
+          <i class="bi bi-geo-alt flex-shrink-0 fs-3 me-3"></i>
+          <div>
+            <h4>Location</h4>
+            <p>Noida, Uttar Pradesh, India</p>
+          </div>
+        </div>
+
+        <div class="info-item d-flex align-items-start mb-4">
+          <i class="bi bi-envelope flex-shrink-0 fs-3 me-3"></i>
+          <div>
+            <h4>Email</h4>
+            <p>hustlewithsunil@gmail.com</p>
+          </div>
+        </div>
+
+        <div class="info-item d-flex align-items-start mb-4">
+          <i class="bi bi-phone flex-shrink-0 fs-3 me-3"></i>
+          <div>
+            <h4>WhatsApp</h4>
+            <p>Available for chat</p>
+          </div>
+        </div>
+
+        <div class="social-links mt-3">
+          <a href="https://github.com/realsunil" target="_blank"><i class="bi bi-github"></i></a>
+          <a href="https://instagram.com/realsunil__" target="_blank"><i class="bi bi-instagram"></i></a>
+          <a href="https://youtube.com/@sunilgaming_op" target="_blank"><i class="bi bi-youtube"></i></a>
+        </div>
+      </div>
+
+      <div class="col-lg-7">
+        <form id="contactForm" action="https://formspree.io/f/mvgvvbjy" method="POST" class="glass-box p-4">
+          <h3 class="mb-3">Get in Touch ✨</h3>
+
+          <input type="text" name="name" placeholder="Your Name" required>
+          <br><br>
+
+          <input type="email" name="email" placeholder="Your Email" required>
+          <br><br>
+
+          <input type="text" name="subject" placeholder="Subject" required>
+          <br><br>
+
+          <textarea name="message" rows="4" placeholder="Your Message..." required></textarea>
+          <br>
+
+          <button type="submit" id="sendBtn" class="btn w-100">Send Message →</button>
+          <p id="formStatus" class="hidden">✅ Message sent successfully!</p>
+          <p id="formError" class="hidden">❌ Something went wrong, try again!</p>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+  </main>
+
+  <footer class="footer text-center py-3">
+    © <span id="curYear"></span> Sunil Kumar • Built with ❤️
+  </footer>
+
+  <!-- Floating decorative dots -->
+  <div class="floating-dot dot1"></div>
+  <div class="floating-dot dot2"></div>
+
+  <!-- Scripts: Bootstrap, AOS, GSAP, Typed, VanillaTilt -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.0/dist/vanilla-tilt.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.16"></script>
+
+  <!-- main JS -->
+  <script src="assets/js/main.js"></script>
+
+  <script>
+const modeBtn = document.getElementById("modeToggle");
+const body = document.body;
+
+modeBtn.addEventListener("click", () => {
+  body.classList.toggle("light-mode");
+
+  // Change icon moon -> sun
+  if(body.classList.contains("light-mode")){
+    modeBtn.innerHTML = '<i class="bi bi-sun-fill"></i>';
+  } else {
+    modeBtn.innerHTML = '<i class="bi bi-moon-fill"></i>';
+  }
+});
+</script>
+
+</body>
+</html>
