@@ -12,7 +12,7 @@
 - HTML5 / CSS3 / JavaScript
 - React.js / Vue / Svelte (choose one)
 - Tailwind CSS / Bootstrap / Custom CSS
-- Hosted on GitHub Pages / Vercel / Netlify
+- Hosted on GitHub Pages / Vercel / Netlify / cloudflare
 
 ---
 
