@@ -226,3 +226,158 @@ input:focus, textarea:focus {
 .light-mode .left-nav .nav a:hover {
   color: #222;
 }
+
+/* --------------------------
+   Animated Icon Links
+---------------------------*/
+.icon-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 28px;
+}
+
+.icon-link {
+  position: relative;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(12px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: #fff;
+  text-decoration: none;
+  font-size: 26px;
+  transition: 0.35s ease;
+  box-shadow: 0 0 18px rgba(124,58,237,0.25);
+  animation: floatIcon 4s ease-in-out infinite;
+}
+
+.icon-link span {
+  font-size: 12px;
+  margin-top: 6px;
+  opacity: 0;
+  transform: translateY(6px);
+  transition: 0.3s;
+}
+
+/* Hover effects */
+.icon-link:hover {
+  transform: translateY(-8px) scale(1.1);
+  box-shadow: 0 0 30px rgba(124,58,237,0.7);
+}
+
+.icon-link:hover span {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Floating animation */
+@keyframes floatIcon {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0); }
+}
+
+/* Brand glow colors */
+.icon-link.github:hover { box-shadow: 0 0 30px #6e5494; }
+.icon-link.linkedin:hover { box-shadow: 0 0 30px #0a66c2; }
+.icon-link.instagram:hover { box-shadow: 0 0 30px #e1306c; }
+.icon-link.youtube:hover { box-shadow: 0 0 30px #ff0000; }
+.icon-link.gumroad:hover { box-shadow: 0 0 30px #ff90e8; }
+.icon-link.contact:hover { box-shadow: 0 0 30px #22d3ee; }
+
+/* Light mode fix */
+.light-mode .icon-link {
+  background: rgba(0,0,0,0.08);
+  color: #111;
+}
+
+/* About Metrics */
+.about-metrics {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.metric {
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(10px);
+  padding: 16px 22px;
+  border-radius: 14px;
+  text-align: center;
+  min-width: 140px;
+  transition: 0.3s;
+}
+
+.metric h3 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #8ab4ff;
+  margin-bottom: 4px;
+}
+
+.metric p {
+  font-size: 14px;
+  opacity: 0.85;
+}
+
+.metric:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 20px rgba(124,58,237,0.5);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .about-metrics {
+    justify-content: center;
+  }
+}
+
+/* Mobile Hero Optimization */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 34px;
+  }
+
+  .hero .lead {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  .hero .btn {
+    width: 100%;
+    margin-bottom: 12px;
+  }
+
+  .hero .d-flex {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-metrics {
+    gap: 14px;
+  }
+
+  .metric {
+    min-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .project-card img {
+    border-radius: 10px;
+  }
+
+  .project-card {
+    padding: 14px;
+  }
+
+  .project-card h5 {
+    font-size: 18px;
+  }
+}

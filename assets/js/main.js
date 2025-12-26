@@ -19,6 +19,13 @@ document.addEventListener('DOMContentLoaded', () => {
   }, 4000);
 });
 
+if (window.innerWidth < 768) {
+  document.querySelectorAll("[data-tilt]").forEach(el => {
+    el.vanillaTilt?.destroy();
+  });
+}
+
+
 // ---------------------------------------------
 // AOS INIT
 // ---------------------------------------------
