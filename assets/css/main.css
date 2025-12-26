@@ -381,3 +381,130 @@ input:focus, textarea:focus {
     font-size: 18px;
   }
 }
+/* --------------------------
+   Mobile Bottom Navigation
+---------------------------*/
+.mobile-nav {
+  position: fixed;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(20,20,30,0.85);
+  backdrop-filter: blur(14px);
+  display: flex;
+  gap: 26px;
+  padding: 14px 20px;
+  border-radius: 18px;
+  z-index: 9999;
+  box-shadow: 0 0 25px rgba(124,58,237,0.5);
+}
+
+.mobile-nav a {
+  color: #bbb;
+  font-size: 22px;
+  transition: 0.3s;
+}
+
+.mobile-nav a:hover,
+.mobile-nav a.active {
+  color: #8ab4ff;
+  transform: scale(1.2);
+}
+
+/* Light mode */
+.light-mode .mobile-nav {
+  background: rgba(240,240,240,0.95);
+}
+
+.light-mode .mobile-nav a {
+  color: #444;
+}
+
+/* Extra space so content doesn't hide */
+@media (max-width: 768px) {
+  body {
+    padding-bottom: 90px;
+  }
+}
+
+/* -----------------------
+   Mobile Hamburger Nav
+------------------------*/
+
+/* Hide mobile nav on desktop */
+.mobile-top-nav,
+.mobile-menu {
+  display: none;
+}
+
+/* Mobile only */
+@media (max-width: 768px) {
+
+  /* Hide left nav on mobile */
+  .left-nav {
+    display: none !important;
+  }
+
+  /* Top-right hamburger */
+  .mobile-top-nav {
+    display: block;
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    z-index: 9999;
+  }
+
+  .mobile-top-nav button {
+    background: rgba(20,20,30,0.85);
+    backdrop-filter: blur(12px);
+    border: none;
+    border-radius: 12px;
+    padding: 10px 14px;
+    color: #fff;
+    font-size: 26px;
+    box-shadow: 0 0 20px rgba(124,58,237,0.6);
+  }
+
+  /* Slide-down menu */
+  .mobile-menu {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 70px;
+    right: 16px;
+    background: rgba(20,20,30,0.95);
+    backdrop-filter: blur(14px);
+    border-radius: 16px;
+    padding: 16px 20px;
+    gap: 14px;
+    z-index: 9998;
+    transform: scale(0);
+    transform-origin: top right;
+    transition: 0.25s ease;
+  }
+
+  .mobile-menu a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+  }
+
+  .mobile-menu a:hover {
+    color: #8ab4ff;
+  }
+
+  .mobile-menu.active {
+    transform: scale(1);
+  }
+
+  /* Light mode */
+  .light-mode .mobile-top-nav button,
+  .light-mode .mobile-menu {
+    background: rgba(245,245,245,0.95);
+    color: #111;
+  }
+
+  .light-mode .mobile-menu a {
+    color: #111;
+  }
+}
