@@ -173,3 +173,40 @@ if (form) {
   });
 }
 
+// Add this JavaScript to your main.js file
+
+// Mobile Menu Toggle
+const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+const mobileMenu = document.getElementById('mobileMenu');
+
+if (mobileMenuBtn && mobileMenu) {
+  mobileMenuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('active');
+    const icon = mobileMenuBtn.querySelector('i');
+    icon.className = mobileMenu.classList.contains('active') ? 'bi bi-x-lg' : 'bi bi-list';
+  });
+
+  // Close mobile menu when clicking on a link
+  document.querySelectorAll('.mobile-menu a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.remove('active');
+      mobileMenuBtn.querySelector('i').className = 'bi bi-list';
+    });
+  });
+}
+
+// Mobile Theme Toggle
+const mobileThemeToggle = document.getElementById('mobileThemeToggle');
+if (mobileThemeToggle) {
+  mobileThemeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('light-mode');
+    const icon = mobileThemeToggle.querySelector('i');
+    icon.className = document.body.classList.contains('light-mode') ? 'bi bi-sun-fill' : 'bi bi-moon-fill';
+    
+    // Sync with desktop theme toggle
+    const desktopIcon = document.querySelector('#modeToggle i');
+    if (desktopIcon) {
+      desktopIcon.className = document.body.classList.contains('light-mode') ? 'bi bi-sun-fill' : 'bi bi-moon-fill';
+    }
+  });
+}
