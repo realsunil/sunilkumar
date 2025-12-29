@@ -25,7 +25,6 @@ if (window.innerWidth < 768) {
   });
 }
 
-
 // ---------------------------------------------
 // AOS INIT
 // ---------------------------------------------
@@ -130,14 +129,24 @@ if (modeToggle) {
 
     if (document.body.classList.contains('light-mode')) {
       icon.className = 'bi bi-sun-fill';
+      // Sync mobile theme icon
+      const mobileIcon = document.querySelector('#mobileThemeToggle i');
+      if (mobileIcon) {
+        mobileIcon.className = 'bi bi-sun-fill';
+      }
     } else {
       icon.className = 'bi bi-moon-fill';
+      // Sync mobile theme icon
+      const mobileIcon = document.querySelector('#mobileThemeToggle i');
+      if (mobileIcon) {
+        mobileIcon.className = 'bi bi-moon-fill';
+      }
     }
   });
 }
 
 // ---------------------------------------------
-// MOBILE MENU TOGGLE - ADD THIS NEW CODE
+// MOBILE MENU TOGGLE - COMPLETE & FIXED
 // ---------------------------------------------
 const mobileMenuBtn = document.getElementById('mobileMenuBtn');
 const mobileMenu = document.getElementById('mobileMenu');
@@ -156,21 +165,29 @@ if (mobileMenuBtn && mobileMenu) {
   document.querySelectorAll('.mobile-menu a').forEach(link => {
     link.addEventListener('click', () => {
       mobileMenu.classList.remove('active');
-      mobileMenuBtn.querySelector('i').className = 'bi bi-list';
+      const icon = mobileMenuBtn.querySelector('i');
+      if (icon) {
+        icon.className = 'bi bi-list';
+      }
     });
   });
 
   // Close menu when clicking outside
   document.addEventListener('click', (e) => {
     if (!mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
-      mobileMenu.classList.remove('active');
-      mobileMenuBtn.querySelector('i').className = 'bi bi-list';
+      if (mobileMenu.classList.contains('active')) {
+        mobileMenu.classList.remove('active');
+        const icon = mobileMenuBtn.querySelector('i');
+        if (icon) {
+          icon.className = 'bi bi-list';
+        }
+      }
     }
   });
 }
 
 // ---------------------------------------------
-// MOBILE THEME TOGGLE - ADD THIS NEW CODE
+// MOBILE THEME TOGGLE
 // ---------------------------------------------
 const mobileThemeToggle = document.getElementById('mobileThemeToggle');
 if (mobileThemeToggle) {
@@ -191,10 +208,12 @@ if (mobileThemeToggle) {
 // CURRENT YEAR (Footer)
 // ---------------------------------------------
 const yearEl = document.getElementById('curYear');
-yearEl && (yearEl.textContent = new Date().getFullYear());
+if (yearEl) {
+  yearEl.textContent = new Date().getFullYear();
+}
 
 // ---------------------------------------------
-// CONTACT FORM — FORMSPREE ✅
+// CONTACT FORM — FORMSPREE
 // ---------------------------------------------
 const form = document.getElementById("contactForm");
 const sendBtn = document.getElementById("sendBtn");

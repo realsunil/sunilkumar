@@ -232,13 +232,11 @@
 
           <div class="col-md-4 project-item" data-type="web">
             <div class="project-card glass-card p-3" data-tilt data-tilt-max="6" data-aos="zoom-in">
-              <img src="assets/img/project2.png" alt="Project 1 screenshot" class="img-fluid mb-2">
+              <img src="assets/img/project2.png" alt="Project 2 screenshot" class="img-fluid mb-2">
               <h5>Aurora Discord Bot</h5>
-              <p class="small text-muted">A multipurpose discod bot wit all commands.</p>
+              <p class="small text-muted">A multipurpose discord bot with all commands.</p>
               <div class="d-flex gap-2 mt-2">
                 <a class="btn btn-sm btn-outline-cta" href="https://discord.gg/ExFEAbtjgf" target="_blank">Preview</a>
-                
-                <!-- GitHub Button Added -->
                 <a class="btn btn-sm btn-outline-cta" href="https://github.com/realsunil/Auroraclub" target="_blank">
                   <i class="bi bi-github"></i> GitHub
                 </a>
@@ -251,14 +249,10 @@
               <img src="assets/img/project3.png" alt="Project 3 screenshot" class="img-fluid mb-2">
               <h5>Multitube YouTube Tool</h5>
               <p class="small text-muted">A tool for playing YouTube videos in multiple windows at the same time.</p>
-
               <div class="d-flex gap-2 mt-2">
-                <!-- Live Link -->
                 <a class="btn btn-sm btn-outline-cta" href="https://realsunil.github.io/MultiTube/" target="_blank">
                   Live
                 </a>
-
-                <!-- GitHub Link -->
                 <a class="btn btn-sm btn-outline-cta" href="https://github.com/realsunil/MultiTube" target="_blank">
                   <i class="bi bi-github"></i> GitHub
                 </a>
@@ -392,58 +386,6 @@
 
   <!-- main JS -->
   <script src="assets/js/main.js"></script>
-
-  <script>
-    const modeBtn = document.getElementById("modeToggle");
-    const body = document.body;
-
-    modeBtn.addEventListener("click", () => {
-      body.classList.toggle("light-mode");
-
-      // Change icon moon -> sun
-      if(body.classList.contains("light-mode")){
-        modeBtn.innerHTML = '<i class="bi bi-sun-fill"></i>';
-      } else {
-        modeBtn.innerHTML = '<i class="bi bi-moon-fill"></i>';
-      }
-    });
-
-    // Mobile Menu Toggle
-    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
-
-    if (mobileMenuBtn && mobileMenu) {
-      mobileMenuBtn.addEventListener('click', () => {
-        mobileMenu.classList.toggle('active');
-        const icon = mobileMenuBtn.querySelector('i');
-        icon.className = mobileMenu.classList.contains('active') ? 'bi bi-x-lg' : 'bi bi-list';
-      });
-
-      // Close mobile menu when clicking on a link
-      document.querySelectorAll('.mobile-menu a').forEach(link => {
-        link.addEventListener('click', () => {
-          mobileMenu.classList.remove('active');
-          mobileMenuBtn.querySelector('i').className = 'bi bi-list';
-        });
-      });
-    }
-
-    // Mobile Theme Toggle
-    const mobileThemeToggle = document.getElementById('mobileThemeToggle');
-    if (mobileThemeToggle) {
-      mobileThemeToggle.addEventListener('click', () => {
-        document.body.classList.toggle('light-mode');
-        const icon = mobileThemeToggle.querySelector('i');
-        icon.className = document.body.classList.contains('light-mode') ? 'bi bi-sun-fill' : 'bi bi-moon-fill';
-        
-        // Sync with desktop theme toggle
-        const desktopIcon = document.querySelector('#modeToggle i');
-        if (desktopIcon) {
-          desktopIcon.className = document.body.classList.contains('light-mode') ? 'bi bi-sun-fill' : 'bi bi-moon-fill';
-        }
-      });
-    }
-  </script>
 
 </body>
 </html>

@@ -12,6 +12,7 @@
 body {
   background: #0f0f17;
   color: #fff;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 /* Space below fixed left nav so hero text doesn't overlap */
@@ -35,14 +36,21 @@ body {
   z-index: 999;
 }
 
-.left-nav .nav a {
+.left-nav .nav a,
+.left-nav .nav .mode-btn {
+  display: block;
   margin: 12px 0;
   font-size: 20px;
   color: #bdbdbd;
   transition: 0.3s;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
 }
 
-.left-nav .nav a:hover {
+.left-nav .nav a:hover,
+.left-nav .nav .mode-btn:hover {
   color: #8ab4ff;
   transform: scale(1.2);
 }
@@ -176,7 +184,7 @@ input:focus, textarea:focus {
    Projects Section Fix
 ---------------------------*/
 #projects {
-  padding-top: 180px; /* Hero se clear distance */
+  padding-top: 180px;
   margin-bottom: 120px;
   position: relative;
   z-index: 1;
@@ -184,7 +192,7 @@ input:focus, textarea:focus {
 
 @media (max-width: 768px) {
   #projects {
-    padding-top: 80px; /* Mobile me kam space */
+    padding-top: 80px;
   }
 }
 
@@ -203,28 +211,51 @@ input:focus, textarea:focus {
 /* Avoid content hiding behind left fixed nav */
 @media (min-width: 769px) {
   .section {
-    padding-left: 100px; /* space for left nav */
+    padding-left: 100px;
   }
 }
 
 /* Light Mode Theme */
 .light-mode {
-  background: #f5f5f5;
-  color: #111;
+  background: #f5f5f5 !important;
+  color: #111 !important;
 }
 
-/* Change glass cards for light mode */
 .light-mode .glass-card {
-  background: rgba(0,0,0,0.05);
-  color: #111;
+  background: rgba(0,0,0,0.05) !important;
+  color: #111 !important;
 }
 
-/* Optional nav color change */
-.light-mode .left-nav .nav a {
-  color: #444;
+.light-mode .left-nav .nav a,
+.light-mode .left-nav .nav .mode-btn {
+  color: #444 !important;
 }
-.light-mode .left-nav .nav a:hover {
-  color: #222;
+
+.light-mode .left-nav .nav a:hover,
+.light-mode .left-nav .nav .mode-btn:hover {
+  color: #222 !important;
+}
+
+.light-mode .section-title h2 {
+  color: #6366f1 !important;
+  text-shadow: 0px 0px 15px rgba(99,102,241,0.3) !important;
+}
+
+.light-mode input,
+.light-mode textarea {
+  background: rgba(0,0,0,0.05) !important;
+  color: #111 !important;
+  border: 1px solid rgba(0,0,0,0.2) !important;
+}
+
+.light-mode input::placeholder,
+.light-mode textarea::placeholder {
+  color: rgba(0,0,0,0.5) !important;
+}
+
+.light-mode .project-card {
+  background: rgba(0,0,0,0.05) !important;
+  color: #111 !important;
 }
 
 /* --------------------------
@@ -381,6 +412,7 @@ input:focus, textarea:focus {
     font-size: 18px;
   }
 }
+
 /* --------------------------
    Mobile Bottom Navigation
 ---------------------------*/
@@ -428,7 +460,7 @@ input:focus, textarea:focus {
 }
 
 /* -----------------------
-   Mobile Hamburger Nav
+   Mobile Hamburger Nav - COMPLETE & FIXED
 ------------------------*/
 
 /* Hide mobile nav on desktop */
@@ -463,6 +495,12 @@ input:focus, textarea:focus {
     color: #fff;
     font-size: 26px;
     box-shadow: 0 0 20px rgba(124,58,237,0.6);
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+
+  .mobile-top-nav button:active {
+    transform: scale(0.95);
   }
 
   /* Slide-down menu */
@@ -478,33 +516,81 @@ input:focus, textarea:focus {
     padding: 16px 20px;
     gap: 14px;
     z-index: 9998;
+    min-width: 180px;
+    
+    /* Animation properties */
     transform: scale(0);
+    opacity: 0;
     transform-origin: top right;
-    transition: 0.25s ease;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+    pointer-events: none;
+  }
+
+  /* When active */
+  .mobile-menu.active {
+    transform: scale(1);
+    opacity: 1;
+    pointer-events: auto;
   }
 
   .mobile-menu a {
     color: #fff;
     text-decoration: none;
     font-size: 16px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
   }
 
   .mobile-menu a:hover {
     color: #8ab4ff;
+    background: rgba(138, 180, 255, 0.1);
   }
 
-  .mobile-menu.active {
-    transform: scale(1);
+  .mobile-menu button {
+    background: rgba(138, 180, 255, 0.2);
+    border: none;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .mobile-menu button:hover {
+    background: rgba(138, 180, 255, 0.3);
   }
 
   /* Light mode */
-  .light-mode .mobile-top-nav button,
+  .light-mode .mobile-top-nav button {
+    background: rgba(245,245,245,0.95) !important;
+    color: #111 !important;
+  }
+
   .light-mode .mobile-menu {
-    background: rgba(245,245,245,0.95);
-    color: #111;
+    background: rgba(245,245,245,0.95) !important;
+    border: 1px solid rgba(0,0,0,0.1);
   }
 
   .light-mode .mobile-menu a {
-    color: #111;
+    color: #111 !important;
+  }
+
+  .light-mode .mobile-menu button {
+    color: #111 !important;
+  }
+
+  /* Add padding to body */
+  body {
+    padding-top: 70px;
   }
 }
