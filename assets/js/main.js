@@ -120,19 +120,72 @@ document.querySelectorAll('[data-filter]').forEach(btn => {
 });
 
 // ---------------------------------------------
-// THEME TOGGLE
+// THEME TOGGLE (Desktop)
 // ---------------------------------------------
 const modeToggle = document.getElementById('modeToggle');
-modeToggle?.addEventListener('click', () => {
-  document.body.classList.toggle('dark-mode');
-  const icon = modeToggle.querySelector('i');
+if (modeToggle) {
+  modeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('light-mode');
+    const icon = modeToggle.querySelector('i');
 
-  if (document.body.classList.contains('dark-mode')) {
-    icon.className = 'bi bi-sun-fill';
-  } else {
-    icon.className = 'bi bi-moon-fill';
-  }
-});
+    if (document.body.classList.contains('light-mode')) {
+      icon.className = 'bi bi-sun-fill';
+    } else {
+      icon.className = 'bi bi-moon-fill';
+    }
+  });
+}
+
+// ---------------------------------------------
+// MOBILE MENU TOGGLE - ADD THIS NEW CODE
+// ---------------------------------------------
+const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+const mobileMenu = document.getElementById('mobileMenu');
+
+if (mobileMenuBtn && mobileMenu) {
+  // Toggle menu on button click
+  mobileMenuBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    mobileMenu.classList.toggle('active');
+    const icon = mobileMenuBtn.querySelector('i');
+    icon.className = mobileMenu.classList.contains('active') ? 'bi bi-x-lg' : 'bi bi-list';
+  });
+
+  // Close mobile menu when clicking on a link
+  document.querySelectorAll('.mobile-menu a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.remove('active');
+      mobileMenuBtn.querySelector('i').className = 'bi bi-list';
+    });
+  });
+
+  // Close menu when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+      mobileMenu.classList.remove('active');
+      mobileMenuBtn.querySelector('i').className = 'bi bi-list';
+    }
+  });
+}
+
+// ---------------------------------------------
+// MOBILE THEME TOGGLE - ADD THIS NEW CODE
+// ---------------------------------------------
+const mobileThemeToggle = document.getElementById('mobileThemeToggle');
+if (mobileThemeToggle) {
+  mobileThemeToggle.addEventListener('click', () => {
+    document.body.classList.toggle('light-mode');
+    const icon = mobileThemeToggle.querySelector('i');
+    icon.className = document.body.classList.contains('light-mode') ? 'bi bi-sun-fill' : 'bi bi-moon-fill';
+    
+    // Sync with desktop theme toggle
+    const desktopIcon = document.querySelector('#modeToggle i');
+    if (desktopIcon) {
+      desktopIcon.className = document.body.classList.contains('light-mode') ? 'bi bi-sun-fill' : 'bi bi-moon-fill';
+    }
+  });
+}
 
 // ---------------------------------------------
 // CURRENT YEAR (Footer)
@@ -161,52 +214,22 @@ if (form) {
 
     if (res.ok) {
       form.reset();
-      formStatus.style.display = "block";
-      formError.style.display = "none";
+      if (formStatus) {
+        formStatus.style.display = "block";
+      }
+      if (formError) {
+        formError.style.display = "none";
+      }
       sendBtn.innerText = "Sent ✅";
       setTimeout(() => sendBtn.innerText = "Send Message →", 1500);
     } else {
-      formError.style.display = "block";
-      formStatus.style.display = "none";
+      if (formError) {
+        formError.style.display = "block";
+      }
+      if (formStatus) {
+        formStatus.style.display = "none";
+      }
       sendBtn.innerText = "Try Again ❌";
-    }
-  });
-}
-
-// Add this JavaScript to your main.js file
-
-// Mobile Menu Toggle
-const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-const mobileMenu = document.getElementById('mobileMenu');
-
-if (mobileMenuBtn && mobileMenu) {
-  mobileMenuBtn.addEventListener('click', () => {
-    mobileMenu.classList.toggle('active');
-    const icon = mobileMenuBtn.querySelector('i');
-    icon.className = mobileMenu.classList.contains('active') ? 'bi bi-x-lg' : 'bi bi-list';
-  });
-
-  // Close mobile menu when clicking on a link
-  document.querySelectorAll('.mobile-menu a').forEach(link => {
-    link.addEventListener('click', () => {
-      mobileMenu.classList.remove('active');
-      mobileMenuBtn.querySelector('i').className = 'bi bi-list';
-    });
-  });
-}
-
-// Mobile Theme Toggle
-const mobileThemeToggle = document.getElementById('mobileThemeToggle');
-if (mobileThemeToggle) {
-  mobileThemeToggle.addEventListener('click', () => {
-    document.body.classList.toggle('light-mode');
-    const icon = mobileThemeToggle.querySelector('i');
-    icon.className = document.body.classList.contains('light-mode') ? 'bi bi-sun-fill' : 'bi bi-moon-fill';
-    
-    // Sync with desktop theme toggle
-    const desktopIcon = document.querySelector('#modeToggle i');
-    if (desktopIcon) {
-      desktopIcon.className = document.body.classList.contains('light-mode') ? 'bi bi-sun-fill' : 'bi bi-moon-fill';
     }
   });
 }
