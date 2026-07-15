@@ -656,6 +656,88 @@ body.menu-open { overflow: hidden; }
   transition: width 1.6s cubic-bezier(.77,0,.18,1);
 }
 
+/* ── EXPERIENCE ── */
+#experience { background: transparent; }
+.exp-timeline { position: relative; display: flex; flex-direction: column; gap: 0; }
+.exp-timeline::before {
+  content: ''; position: absolute; left: 9px; top: 10px; bottom: 10px;
+  width: 1px; background: linear-gradient(to bottom, var(--gold), var(--border));
+}
+.exp-item {
+  position: relative; display: grid;
+  grid-template-columns: 20px 1fr; gap: 2.4rem;
+  padding: 0 0 4rem 0;
+}
+.exp-item:last-child { padding-bottom: 0; }
+.exp-dot {
+  width: 20px; height: 20px; margin-top: .3rem;
+  position: relative; z-index: 1;
+}
+.exp-dot::before {
+  content: ''; position: absolute; inset: 6px;
+  background: var(--gold); border-radius: 50%;
+  box-shadow: 0 0 12px rgba(212,168,67,.6);
+}
+.exp-dot::after {
+  content: ''; position: absolute; inset: 0;
+  border: 1px solid rgba(212,168,67,.3); border-radius: 50%;
+}
+.exp-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 6px; padding: 2.4rem 2.6rem;
+  transition: border-color .4s, transform .5s cubic-bezier(.77,0,.18,1);
+}
+.exp-card:hover { border-color: rgba(212,168,67,.3); transform: translateX(6px); }
+.exp-top {
+  display: flex; justify-content: space-between; align-items: baseline;
+  flex-wrap: wrap; gap: .8rem; margin-bottom: .6rem;
+}
+.exp-role {
+  font-family: var(--serif); font-size: clamp(1.3rem, 2vw, 1.9rem);
+  font-weight: 600; font-style: italic; color: var(--text);
+}
+.exp-date {
+  font-size: .68rem; font-weight: 700; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--gold); white-space: nowrap;
+}
+.exp-org {
+  font-size: .82rem; color: var(--muted); margin-bottom: 1.4rem;
+  letter-spacing: .02em;
+}
+.exp-org span { color: var(--dimmed); }
+.exp-points { list-style: none; display: flex; flex-direction: column; gap: .7rem; }
+.exp-points li {
+  font-size: .9rem; line-height: 1.6; color: var(--muted);
+  padding-left: 1.3rem; position: relative;
+}
+.exp-points li::before {
+  content: ''; position: absolute; left: 0; top: .6em;
+  width: 5px; height: 1px; background: var(--gold);
+}
+
+/* ── CERTIFICATIONS ── */
+.cert-heading {
+  font-family: var(--serif); font-size: 1.1rem; font-style: italic;
+  color: var(--muted); margin: 5rem 0 2rem; padding-top: 4rem;
+  border-top: 1px solid var(--border);
+}
+.cert-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.2rem; }
+.cert-card {
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 6px; padding: 1.6rem 1.8rem;
+  display: flex; align-items: center; gap: 1.1rem;
+  transition: border-color .4s, transform .4s cubic-bezier(.77,0,.18,1);
+}
+.cert-card:hover { border-color: rgba(212,168,67,.3); transform: translateY(-4px); }
+.cert-icon {
+  flex-shrink: 0; width: 42px; height: 42px;
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(212,168,67,.1); border: 1px solid rgba(212,168,67,.2);
+  border-radius: 10px; font-size: 1.1rem;
+}
+.cert-name { font-size: .88rem; font-weight: 500; color: var(--text); margin-bottom: .2rem; }
+.cert-issuer { font-size: .74rem; color: var(--dimmed); }
+
 /* ── WORK ── */
 #work { background: transparent; }
 .work-list { display: flex; flex-direction: column; }
@@ -888,6 +970,11 @@ footer {
   .work-item { grid-template-columns: 1fr; gap: .8rem; padding: 2rem 1rem; }
   .work-item:hover { padding-left: 1rem; }
   .work-links { flex-wrap: wrap; }
+  .exp-card { padding: 1.8rem 1.4rem; }
+  .exp-card:hover { transform: none; }
+  .exp-item { grid-template-columns: 14px 1fr; gap: 1.2rem; }
+  .exp-timeline::before { left: 6px; }
+  .cert-grid { grid-template-columns: 1fr; }
   .about-badge { left: -.3rem; }
   footer { flex-direction: column; text-align: center; padding: 2.5rem 5%; }
   .footer-nav { flex-wrap: wrap; justify-content: center; gap: 1.5rem; }
@@ -922,6 +1009,7 @@ footer {
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Experience</a></li>
     <li><a href="#work">Work</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
@@ -935,6 +1023,7 @@ footer {
 <div class="nav-mobile-overlay" id="navMobileOverlay">
   <a href="#about">About</a>
   <a href="#skills">Skills</a>
+  <a href="#experience">Experience</a>
   <a href="#work">Work</a>
   <a href="#contact">Contact</a>
   <div class="nav-mobile-social">
@@ -1115,9 +1204,67 @@ footer {
   </div>
 </section>
 
+<!-- ═══ EXPERIENCE ═══ -->
+<section class="section" id="experience">
+  <div class="sec-eyebrow"><span class="num">03&nbsp;/</span> Experience</div>
+  <div class="sec-title rv">Where I've <em>Worked</em><br><strong class="stroke">&amp; Learned</strong></div>
+
+  <div class="exp-timeline">
+    <div class="exp-item rv">
+      <div class="exp-dot"></div>
+      <div class="exp-card">
+        <div class="exp-top">
+          <div class="exp-role">Full-Stack Web Developer Intern</div>
+          <div class="exp-date">Jan 2026 — Mar 2026</div>
+        </div>
+        <div class="exp-org">EDXcellence LLP &middot; <span>Remote</span></div>
+        <ul class="exp-points">
+          <li>Engineered responsive web apps with JavaScript (ES6+), HTML5, and CSS3, improving cross-browser UI performance by 25%.</li>
+          <li>Architected RESTful APIs using Node.js/Express.js, achieving a 30% latency reduction and handling 500+ daily requests with fault-tolerant patterns.</li>
+          <li>Optimized MongoDB schemas and contributed to CI/CD pipelines and Agile sprints with strong cross-functional collaboration.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item rv d1">
+      <div class="exp-dot"></div>
+      <div class="exp-card">
+        <div class="exp-top">
+          <div class="exp-role">Founder &amp; Discord Bot Developer</div>
+          <div class="exp-date">2022 — Present</div>
+        </div>
+        <div class="exp-org">Aurora Club &amp; Independent Projects &middot; <span>Remote</span></div>
+        <ul class="exp-points">
+          <li>Architected 20+ automation bots serving 1,000+ active users via real-time event-driven Node.js/Discord.js systems, sustaining 99.9% uptime through VPS hardening and PM2 process management.</li>
+          <li>Eliminated 80%+ manual operations through webhook and API-based automation for moderation and user engagement.</li>
+          <li>Built and scaled Aurora Club, a Discord community, to 2,000+ members as founder and lead developer.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="cert-heading rv">Certifications</div>
+  <div class="cert-grid">
+    <div class="cert-card rv">
+      <div class="cert-icon">&#9775;&#65039;</div>
+      <div>
+        <div class="cert-name">AWS Technical Essentials</div>
+        <div class="cert-issuer">Amazon Web Services</div>
+      </div>
+    </div>
+    <div class="cert-card rv d1">
+      <div class="cert-icon">&#10024;</div>
+      <div>
+        <div class="cert-name">Google Gemini Certified Student</div>
+        <div class="cert-issuer">Google</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ═══ WORK ═══ -->
 <section class="section" id="work">
-  <div class="sec-eyebrow"><span class="num">03&nbsp;/</span> Work</div>
+  <div class="sec-eyebrow"><span class="num">04&nbsp;/</span> Work</div>
   <div class="sec-title rv">Featured <em>Projects</em></div>
   <div class="work-list">
 
