@@ -258,7 +258,7 @@ section{padding:5rem 6%}}
         <div class="card"><small>Education</small><strong>MCA, JSS University</strong></div>
         <div class="card"><small>Speciality</small><strong>Full-Stack Development</strong></div>
         <div class="card"><small>Stack</small><strong>JS, Node, React</strong></div>
-        <div class="card"><small>Email</small><strong>hustlewithsunil@gmail.com</strong></div>
+        <div class="card"><small>Email</small><strong>sunily7712@gmail.com</strong></div>
         <div class="card"><small>Status</small><strong style="color:var(--m)">Open to work</strong></div>
       </div>
       <a class="btn mag rv" href="https://drive.google.com/file/d/1s3-j3s8rRNCULtCTFoEoy-cEMtWVk12k/view?usp=drivesdk" target="_blank" rel="noopener">Download resume</a>
@@ -309,8 +309,8 @@ section{padding:5rem 6%}}
   <h2 class="rv">Let’s build <span>something great.</span></h2>
   <p class="rv">Open to full-time roles, freelance projects, and ambitious collaborations. If you’re building something exciting, I want to be part of it.</p>
   <div class="row rv">
-    <button class="btn mag" id="copy" type="button">Copy hustlewithsunil@gmail.com</button>
-    <a class="btn g mag" href="mailto:hustlewithsunil@gmail.com">Send an email</a>
+    <button class="btn mag" id="copy" type="button">Copy sunily7712@gmail.com</button>
+    <a class="btn g mag" href="mailto:sunily7712@gmail.com">Send an email</a>
     <a class="btn g mag" href="https://drive.google.com/file/d/1s3-j3s8rRNCULtCTFoEoy-cEMtWVk12k/view?usp=drivesdk" target="_blank" rel="noopener">View resume</a>
   </div>
   <div class="soc rv">
@@ -417,7 +417,7 @@ function goTo(t){if(busy)return;menu(false);if(RM){t.scrollIntoView();return}
 $$('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{const t=$(a.getAttribute('href'));if(!t)return;e.preventDefault();goTo(t)}));
 
 /* copy email */
-$('#copy').onclick=()=>{const done=()=>{const t=$('#toast');t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2200)};(navigator.clipboard?navigator.clipboard.writeText('hustlewithsunil@gmail.com'):Promise.reject()).then(done,()=>{location.href='mailto:hustlewithsunil@gmail.com'})};
+$('#copy').onclick=()=>{const done=()=>{const t=$('#toast');t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2200)};(navigator.clipboard?navigator.clipboard.writeText('sunily7712@gmail.com'):Promise.reject()).then(done,()=>{location.href='mailto:sunily7712@gmail.com'})};
 
 /* interactive terminal */
 const RES='https://drive.google.com/file/d/1s3-j3s8rRNCULtCTFoEoy-cEMtWVk12k/view?usp=drivesdk',tb=$('#tb'),ti=$('#ti');
@@ -430,11 +430,11 @@ const CMD={
   bots:()=>'20+ bots · 1,000+ active users · 99.9% uptime<br>Node.js, Discord.js, PM2.',
   projects:()=>W.map(w=>w[4][0]?`<a href="${w[4][0][1]}" target="_blank" rel="noopener">${w[0]} ↗</a>`:w[0]).join('<br>'),
   resume:()=>`<a href="${RES}" target="_blank" rel="noopener">Open my resume ↗</a>`,
-  contact:()=>'hustlewithsunil@gmail.com · <a href="#contact">jump to contact</a>',
+  contact:()=>'sunily7712@gmail.com · <a href="#contact">jump to contact</a>',
   clear:()=>{tb.innerHTML='';return ''}
 };
 function run(v){v=v.trim().toLowerCase().replace(/^\//,'');if(!v)return;out('/'+esc(v),'u');
-  if(v==='sudo hire sunil'){out('Permission granted. Opening your email app…');setTimeout(()=>{location.href='mailto:hustlewithsunil@gmail.com?subject=Let%27s%20work%20together'},900);return}
+  if(v==='sudo hire sunil'){out('Permission granted. Opening your email app…');setTimeout(()=>{location.href='mailto:sunily7712@gmail.com?subject=Let%27s%20work%20together'},900);return}
   const f=CMD[v],r=f?f():`Unknown command "${esc(v)}". Try <b>help</b>.`;if(r)out(r)}
 ['about','skills','bots','projects','resume','contact'].forEach(n=>{const b=document.createElement('button');b.type='button';b.textContent='/'+n;b.onclick=()=>run(n);$('#tc').appendChild(b)});
 $('#tf').onsubmit=e=>{e.preventDefault();run(ti.value);ti.value=''};
@@ -456,7 +456,7 @@ const SOC=[['GitHub','https://github.com/realsunil'],['LinkedIn','https://linked
 const PI=[...['About','Skills','Experience','Work','Contact'].map(n=>({g:'Go to',t:n,f:()=>goTo($('#'+n.toLowerCase()))})),
   {g:'Actions',t:'Open resume',f:()=>window.open(RES,'_blank','noopener')},
   {g:'Actions',t:'Copy email address',f:()=>$('#copy').click()},
-  {g:'Actions',t:'Send an email',f:()=>{location.href='mailto:hustlewithsunil@gmail.com'}},
+  {g:'Actions',t:'Send an email',f:()=>{location.href='mailto:sunily7712@gmail.com'}},
   {g:'Actions',t:'Switch light / dark theme',f:()=>$('#tg').click()},
   ...W.filter(w=>w[4][0]).map(w=>({g:'Projects',t:w[0],f:()=>window.open(w[4][0][1],'_blank','noopener')})),
   ...SOC.map(s=>({g:'Links',t:s[0],f:()=>window.open(s[1],'_blank','noopener')}))];
