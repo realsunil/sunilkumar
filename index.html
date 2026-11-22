@@ -261,7 +261,7 @@ section{padding:5rem 6%}}
         <div class="card"><small>Email</small><strong>hustlewithsunil@gmail.com</strong></div>
         <div class="card"><small>Status</small><strong style="color:var(--m)">Open to work</strong></div>
       </div>
-      <a class="btn mag rv" href="https://drive.google.com/file/d/13B-jhtB30AtgFLDOqDWqoEitIDXFmaFG/view?usp=sharing" target="_blank" rel="noopener">Download resume</a>
+      <a class="btn mag rv" href="https://drive.google.com/file/d/1s3-j3s8rRNCULtCTFoEoy-cEMtWVk12k/view?usp=drivesdk" target="_blank" rel="noopener">Download resume</a>
     </div>
   </div>
 </section>
@@ -311,7 +311,7 @@ section{padding:5rem 6%}}
   <div class="row rv">
     <button class="btn mag" id="copy" type="button">Copy hustlewithsunil@gmail.com</button>
     <a class="btn g mag" href="mailto:hustlewithsunil@gmail.com">Send an email</a>
-    <a class="btn g mag" href="https://drive.google.com/file/d/13B-jhtB30AtgFLDOqDWqoEitIDXFmaFG/view?usp=sharing" target="_blank" rel="noopener">View resume</a>
+    <a class="btn g mag" href="https://drive.google.com/file/d/1s3-j3s8rRNCULtCTFoEoy-cEMtWVk12k/view?usp=drivesdk" target="_blank" rel="noopener">View resume</a>
   </div>
   <div class="soc rv">
     <a href="https://github.com/realsunil" target="_blank" rel="noopener">GitHub ↗</a>
@@ -420,7 +420,7 @@ $$('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{const t=$(a.getAttr
 $('#copy').onclick=()=>{const done=()=>{const t=$('#toast');t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2200)};(navigator.clipboard?navigator.clipboard.writeText('hustlewithsunil@gmail.com'):Promise.reject()).then(done,()=>{location.href='mailto:hustlewithsunil@gmail.com'})};
 
 /* interactive terminal */
-const RES='https://drive.google.com/file/d/13B-jhtB30AtgFLDOqDWqoEitIDXFmaFG/view?usp=sharing',tb=$('#tb'),ti=$('#ti');
+const RES='https://drive.google.com/file/d/1s3-j3s8rRNCULtCTFoEoy-cEMtWVk12k/view?usp=drivesdk',tb=$('#tb'),ti=$('#ti');
 const esc=s=>s.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 function out(h,c='o'){const d=document.createElement('div');d.className=c;d.innerHTML=h;tb.appendChild(d);tb.scrollTop=tb.scrollHeight}
 const CMD={
